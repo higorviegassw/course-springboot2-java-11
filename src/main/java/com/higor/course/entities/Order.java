@@ -13,10 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-<<<<<<< HEAD
 import javax.persistence.OneToOne;
-=======
->>>>>>> 25d4f29df9893506983d4d69c50d4abcf5b7eb8d
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -44,12 +41,9 @@ public class Order implements Serializable{
 	@OneToMany(mappedBy = "id.order")
 	private Set<OrderItem> items = new HashSet<>();
 	
-<<<<<<< HEAD
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	private Payment payment;
 	
-=======
->>>>>>> 25d4f29df9893506983d4d69c50d4abcf5b7eb8d
 	public Order() {}
 
 	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
@@ -97,7 +91,6 @@ public class Order implements Serializable{
 	public Set<OrderItem> getItems(){
 		return items;
 	}
-<<<<<<< HEAD
 
 	public Payment getPayment() {
 		return payment;
@@ -106,8 +99,14 @@ public class Order implements Serializable{
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
-=======
->>>>>>> 25d4f29df9893506983d4d69c50d4abcf5b7eb8d
+	
+	public Double getTotal() {
+		double sum = 0.0;
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {

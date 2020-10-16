@@ -11,10 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.higor.course.entities.Category;
 import com.higor.course.entities.Order;
 import com.higor.course.entities.OrderItem;
-<<<<<<< HEAD
 import com.higor.course.entities.Payment;
-=======
->>>>>>> 25d4f29df9893506983d4d69c50d4abcf5b7eb8d
 import com.higor.course.entities.Product;
 import com.higor.course.entities.User;
 import com.higor.course.entities.enums.OrderStatus;
@@ -84,14 +81,11 @@ public class TestConfig implements CommandLineRunner {
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
-<<<<<<< HEAD
 		
 		Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1);
 		o1.setPayment(pay1);
 		
 		orderRepository.save(o1);
-=======
->>>>>>> 25d4f29df9893506983d4d69c50d4abcf5b7eb8d
 		
 	}
 	
